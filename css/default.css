@@ -637,7 +637,9 @@
 
 
 
-
+img.roundedCornersDiv {
+    border-radius: 30px 30px 30px 30px;
+}
 
 
 
