@@ -5,7 +5,7 @@ var gravatar_src = function()
   return md5('fred.marchand.23@gmail.com');
 }
 
-        $(document).ready(function() {
+/*$("#btn_get_repos").click(function() {
     $.ajax({
         type: "GET",
         url: "https://api.github.com/users/fredericmarchand/repos",
@@ -19,10 +19,7 @@ var gravatar_src = function()
                 console.log("i: " + i);
             }
             console.log(result);
-            //$("#repo_count").append("Total Repos: " + result.length);
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-        }     
+            $("#repo_count").append("Total Repos: " + result.length);
+        }
     });
-});
+});*/

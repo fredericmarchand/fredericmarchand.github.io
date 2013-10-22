@@ -1,0 +1,5 @@
+name: Frederic Marchand
+markdown: redcarpet
+pygments: true
+safe: true
+lsi: false

@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #E9E9E9 repeat;
+		background: #E9E9E9 url(images/bg01.png) repeat;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 11pt;
 		font-weight: 400;
@@ -45,7 +45,6 @@
 	a
 	{
 		color: #0000FF;
-		text-decoration: none
 	}
 	
 	a:hover
@@ -448,7 +447,7 @@
 		overflow: hidden;
 		width: 1050px;
 		padding: 0em 75px 6em 75px;
-		background: #292929 repeat;
+		background: #292929 url(images/bg01.png) repeat;
 	}
 	
 	#portfolio ul
@@ -644,39 +643,7 @@ img.roundedCornersDiv {
 
 #repos {
     width: 100%;
-    height: 600px;
+    height: 300px;
     overflow-y: scroll;
     padding: 10px;
-}
-
-ul.github {
-    list-style-type: none;
-}
-
-ul.github li {
-    font-weight: bold;
-    font-size: 18px;
-    color: #01A9DC;
-    border-bottom: 1px solid #000;
-    padding-bottom: 3px;
-    padding-left: 5px;
-}
-
-ul.github li:hover {
-    background-color: #E9E9E9;
-    font-color: white;
-    cursor: pointer;
-}
-
-ul.github li a {
-    color: #01A9DC;
-    text-decoration: none;
-}
-
-ul.github li a:visited {
-    font-weight: bold;
-    font-size: 16px;
-    color: #01A9DC;
-    border-bottom: 1px solid #000;
-    padding-bottom: 3px;
 }

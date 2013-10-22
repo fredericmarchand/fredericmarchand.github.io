@@ -9,26 +9,51 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="/css/fonts.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="/css/default.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-    <script src="js/default.js"></script>
+    <script src="/js/default.js"></script>
+
+    <script>
+        $("#btn_get_repos").click(function() {
+    $.ajax({
+        type: "GET",
+        url: "https://api.github.com/users/fredericmarchand/repos",
+        dataType: "json",
+        success: function(result) {
+            for( i in result ) {
+                $("#repo_list").append(
+                    "<li><a href='" + result[i].html_url + "' target='_blank'>" +
+                    result[i].name + "</a></li>"
+                );
+                console.log("i: " + i);
+            }
+            console.log(result);
+            $("#repo_count").append("Total Repos: " + result.length);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+        }     
+    });
+});
+    </script>
+
+
 
 </head>
 <body>
   <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<!--<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
+}(document, 'script', 'facebook-jssdk'));</script>-->
 
       <script>
       $('#profilepic').attr('src', 'http://www.gravatar.com/avatar/' + gravatar_src);
@@ -47,33 +72,34 @@
     </div>
     <div id="three-column" class="container">
       <div><span class="arrow-down"></span></div>
-        <div id="tbox1"> <a href="https://www.facebook.com/frederic.marchand.7583"><span class="icon icon-facebook"></span>
+        <div id="tbox1"> <span class="icon icon-facebook"></span>
           <div class="title">
             <h2>Facebook</h2>
-          </div></a>
+          </div>
       
-          <div class="fb-comments" data-href="https://www.facebook.com/frederic.marchand.7583" data-colorscheme="The color scheme used in the plugin" data-numposts="5" data-width="400"></div>
+          <a href="https://www.facebook.com/frederic.marchand.7583" class="button">Like Me!</a> 
         </div>
-        <div id="tbox2"> <a href="https://twitter.com/FredMarchand23"><span class="icon icon-twitter"></span>
+        <div id="tbox2"> <span class="icon icon-twitter"></span>
           <div class="title">
             <h2>Twitter</h2>
-          </div></a>
+          </div>
           <a class="twitter-timeline" href="https://twitter.com/FredMarchand23" data-widget-id="392674546269970432">Tweets by @FredMarchand23</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
       
         <!--<a href="https://twitter.com/FredMarchand23" class="button">Follow Me!</a> -->
       </div>
-      <div id="tbox3"> <a href="https://github.com/fredericmarchand"><span class="icon icon-github"></span>
+      <div id="tbox3"> <span class="icon icon-github"></span>
         <div class="title">
           <h2>GitHub</h2>
-        </div></a>
+        </div>
+            
        <div id="repos">
-        <h2>Repositories</h2>
-          <ul id="repo_list" class="github">
+          <ul id="repo_list">
           </ul>
        </div>
        <div id="repo_content"></div>
+        <input type="button" value="get repos" id="btn_get_repos"><span id="repo_count"></span>
 
       </div>
     </div>
