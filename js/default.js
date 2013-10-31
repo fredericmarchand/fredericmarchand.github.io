@@ -2,10 +2,11 @@ var md5=function(s){function L(k,d){return(k<<d)|(k>>>(32-d))}function K(G,k){va
 
 var gravatar_src = function()
 {
+    console.log(md5('fred.marchand.23@gmail.com'));
   return md5('fred.marchand.23@gmail.com');
 }
 
-        $(document).ready(function() {
+$(document).ready(function() {
     $.ajax({
         type: "GET",
         url: "https://api.github.com/users/fredericmarchand/repos",
