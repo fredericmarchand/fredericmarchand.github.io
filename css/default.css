@@ -691,10 +691,7 @@
 	  width: 95%;
 	}
 	 
-	h3.blog {
-	  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
-	}
-	h1.blog {
+	.blog h1 h3 {
 	  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
 	}
 
