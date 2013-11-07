@@ -638,8 +638,9 @@
 
 
 	img.roundedCornersDiv {
-		border-radius: 30px 30px 30px 30px;
+		border-radius: 5px 5px 5px 5px;
 		vertical-align: middle;
+		margin-left: 5px;
 	}
 
 	#repos {
